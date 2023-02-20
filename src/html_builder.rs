@@ -38,13 +38,14 @@ pub enum HeadingLevel {
 }
 
 /// Structure representing whole `HTML` document.
+#[derive(Debug, Clone)]
 pub struct HtmlDocument {
   root: HtmlElement,
 }
 
 impl HtmlDocument {
   ///
-  pub fn new(lang: &str, styles: &[&str], body: HtmlElement) -> Self {
+  pub fn new(title: &str, lang: &str, styles: &[&str], body: HtmlElement) -> Self {
     let mut root = HtmlElement::new("html");
     root.set_attr("lang", lang);
     root.set_attr("xmlns", HREF_XMLNS);
@@ -55,9 +56,9 @@ impl HtmlDocument {
     meta.set_attr("charset", "UTF-8");
     head.add_child(meta);
     // <title>
-    let mut title = HtmlElement::new("title");
-    title.set_content("DMN Model");
-    head.add_child(title);
+    let mut title_element = HtmlElement::new("title");
+    title_element.set_content(title);
+    head.add_child(title_element);
     // add link to normal font
     let mut link = HtmlElement::new_void("link");
     link.set_attr("rel", "stylesheet");
@@ -95,11 +96,13 @@ impl fmt::Display for HtmlDocument {
   }
 }
 
+#[derive(Debug, Clone)]
 struct HtmlAttribute {
   name: String,
   value: String,
 }
 
+#[derive(Debug, Clone)]
 pub struct HtmlElement {
   name: String,
   attributes: Vec<HtmlAttribute>,
@@ -162,6 +165,14 @@ impl HtmlElement {
     self.attributes.push(HtmlAttribute {
       name: "class".to_string(),
       value: class.to_string(),
+    })
+  }
+
+  /// Sets a `style` attribute of the `HTML` element.
+  pub fn set_style(&mut self, style: &str) {
+    self.attributes.push(HtmlAttribute {
+      name: "style".to_string(),
+      value: style.to_string(),
     })
   }
 

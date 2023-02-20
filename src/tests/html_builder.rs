@@ -96,7 +96,6 @@ body {
   // prepare HTML body
   let body = HtmlElement::new("body");
   root.add_child(body);
-  //println!("{}", root);
   // compare expected output with html document
   assert_eq!(expected, format!("{}", root));
 }
