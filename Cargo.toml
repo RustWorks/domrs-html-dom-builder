@@ -1,6 +1,6 @@
 [package]
 name = "domrs"
-version = "0.0.1"
+version = "0.0.2"
 authors = ["Dariusz Depta <code@senees.de>"]
 description = "DOM Builder and Serializer"
 documentation = "https://docs.rs/domrs"

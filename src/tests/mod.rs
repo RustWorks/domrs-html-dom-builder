@@ -12,7 +12,4 @@
  * SOFTWARE.
  */
 
-pub mod html_builder;
-
-#[cfg(test)]
-mod tests;
+mod html_builder;
