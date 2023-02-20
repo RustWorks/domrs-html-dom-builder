@@ -1,0 +1,11 @@
+[package]
+name = "domrs"
+version = "0.0.1"
+authors = ["Dariusz Depta <code@senees.de>"]
+description = "DOM Builder and Serializer"
+documentation = "https://docs.rs/domrs"
+repository = "https://github.com/senees/domrs.git"
+license = "MIT"
+edition = "2021"
+
+[dependencies]

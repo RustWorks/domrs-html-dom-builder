@@ -1,2 +1,3 @@
-# domrs
-DOM builder and serializer
+# DOM Builder and Serializer
+
+**WORK IN PROGRESS**
