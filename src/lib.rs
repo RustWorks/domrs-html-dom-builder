@@ -12,7 +12,9 @@
  * SOFTWARE.
  */
 
-pub mod html_builder;
+mod html_builder;
+
+pub use html_builder::{HtmlDocument,HtmlElement, HeadingLevel};
 
 #[cfg(test)]
 mod tests;

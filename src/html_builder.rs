@@ -16,7 +16,7 @@ use std::fmt;
 use std::fmt::Write;
 
 /// Common indentation value.
-pub const INDENT: usize = 2;
+const INDENT: usize = 2;
 
 /// Reference of the `HTML` standard.
 const HREF_XMLNS: &str = "http://www.w3.org/1999/xhtml";
